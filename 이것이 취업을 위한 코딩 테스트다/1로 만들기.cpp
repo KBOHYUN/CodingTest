@@ -6,7 +6,7 @@
 
 using namespace std;
 
-int count[MAXN] = { 0, };
+int cnt[MAXN] = { 0, };
 
 
 int main() {
@@ -17,22 +17,22 @@ int main() {
 	cin >> N;
 
 	for (int i = 2; i <= N; i++) {
-		count[i] = count[i - 1] + 1;
+		cnt[i] = cnt[i - 1] + 1;
 
 		if (i % 2 == 0) {
-			count[i] = min(count[i], count[i / 2] + 1);
+			cnt[i] = min(cnt[i], cnt[i / 2] + 1);
 		}
 		if (i % 3 == 0) {
-			count[i] = min(count[i], count[i / 3] + 1);
+			cnt[i] = min(cnt[i], cnt[i / 3] + 1);
 		}
 		if (i % 5 == 0) {
-			count[i] = min(count[i], count[i / 5] + 1);
+			cnt[i] = min(cnt[i], cnt[i / 5] + 1);
 		}
 	}
 
-	cout << count[i];
+	cout << cnt[N];
 
 
-	
+
 	return 0;
 }
